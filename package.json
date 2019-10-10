@@ -1,0 +1,14 @@
+{
+  "name": "auto-norber",
+  "version": "1.0.0",
+  "description": "Auto register with norber web",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No tests for now :^)\""
+  },
+  "author": "Felipe Guerço Oliveira",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "1.20.0"
+  }
+}
