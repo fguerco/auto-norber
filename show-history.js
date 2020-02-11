@@ -6,12 +6,11 @@ const appConfig = JSON.parse(fs.readFileSync('config.json'));
 async function main() {
   const browserConfig = {
     headless: true,
-    args: [ '--ignore-certificate-errors' ]
+    args: [ '--ignore-certificate-errors', '--start-fullscreen']
   };
 
   const browser = await puppeteer.launch(browserConfig);
   const page = await browser.newPage();
-
 
   await page.goto('https://norber.m4u/WebPonto/');
   await page.type('#CodEmpresa', '1');
@@ -24,16 +23,11 @@ async function main() {
   await page.waitForNavigation();
   console.log('Logged.');
 
-  await page.goto('https://norber.m4u/WebPonto/just_user/IncluirMarcacaoOnLine.asp');
-
-  console.log('Registering...')
-  const okButton = await page.$('#Button1');
-  await okButton.click();
-  var date = new Date
-  console.log(`Done. Time: ${date.getHours()}:${date.getMinutes()}`);
-
-  await page.waitForNavigation();
-  await browser.close();
+  await page.goto('https://norber.m4u/WebPonto/just_user/justuser.asp');
+  page.setViewport({ width: 1920, height: 3200 })
+  await page.screenshot({path: 'history.png', fullPage: true})
+  
+  await browser.close()
 }
 
 main();
