@@ -13,4 +13,4 @@ async function login(page, appConfig) {
   
   }
 
-  module.exports = login
+module.exports = login
