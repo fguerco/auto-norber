@@ -9,9 +9,12 @@
 Exemplo:
 
     {
+        "siteUrl": "url.do.site",
+        "codEmpresa": "codigo.da.empresa",
         "username": "usuario.da.rede",
         "password": "senha"
     }
 
 ### Executando
-    node index.js
+    node register.js - realiza marcação de ponto
+    node show-history.js - gera uma imagem com as marcações do mês atual
