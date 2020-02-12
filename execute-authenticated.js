@@ -3,7 +3,7 @@ const openBrowser = require('./open-browser');
 const appConfig = require('./config.json');
 
 
-async function executeAuthenticated(exec, siteUrl) {
+async function executeAuthenticated(exec) {
     const [browser, page] = await openBrowser();
     await login(page, appConfig);
     try {
