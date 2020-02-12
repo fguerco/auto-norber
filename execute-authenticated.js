@@ -5,8 +5,8 @@ const appConfig = require('./config.json');
 
 async function executeAuthenticated(exec) {
     const [browser, page] = await openBrowser();
-    await login(page, appConfig);
     try {
+        await login(page, appConfig);
         await exec(page, appConfig.siteUrl);
     }
     finally {
