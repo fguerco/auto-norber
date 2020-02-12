@@ -8,8 +8,8 @@ async function main() {
     console.log('Registering...')
     const okButton = await page.$('#Button1');
     await okButton.click();
-    var date = new Date
-    console.log(`Done. Time: ${date.getHours()}:${date.getMinutes()}`);
+    const date = new Date;
+    console.log(`Done. Time: ${date.toLocaleTimeString()}`);
   
     await page.waitForNavigation();
   });
