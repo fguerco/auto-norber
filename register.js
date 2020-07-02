@@ -1,5 +1,5 @@
-
 const executeAuthenticated = require('./execute-authenticated');
+const registerLocally = require('./register-locally')
 
 async function main() {
   await executeAuthenticated(async (page, siteUrl) => {
@@ -13,6 +13,7 @@ async function main() {
   
     await page.waitForNavigation();
   });
+  await registerLocally();
 }
 
 main();
